@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - SOM Enterprises</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SOM Enterprises Logo" class="logo-image">
+                SOM ENTERPRISES
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#overview">About</a></li>
+                <li><a href="index.html#offerings">Offerings</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="employees.html">Team</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li id="adminLink"><a href="login.html">Admin</a></li>
+                <li id="logoutLink" style="display: none;"><a href="#" onclick="logout(); return false;">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Employee Section -->
+    <section id="employees" class="employees-section">
+        <div class="container">
+            <h2>Our Team</h2>
+            <p class="section-subtitle">Meet the professionals driving our success</p>
+            <div class="employees-grid" id="employeesGrid">
+                <!-- Employees will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SOM ENTERPRISES</h4>
+                    <p>Delivering sustainable energy projects with profitability and long-term vision. Comprehensive partner for India's green transformation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#overview">About</a></li>
+                        <li><a href="index.html#offerings">Offerings</a></li>
+                        <li><a href="employees.html">Team</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: contact@somenterprises.in<br>Phone: +91-98765-43210<br>Owner: Shiv Kant Dubey</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SOM Enterprises. All Rights Reserved. | Powering a Sustainable Future</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
+    <script src="employees.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - SOM Enterprises</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SOM Enterprises Logo" class="logo-image">
+                SOM ENTERPRISES
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#overview">About</a></li>
+                <li><a href="index.html#offerings">Offerings</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="employees.html">Team</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li id="adminLink"><a href="login.html">Admin</a></li>
+                <li id="logoutLink" style="display: none;"><a href="#" onclick="logout(); return false;">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section id="login" class="login-section">
+        <div class="container">
+            <div class="login-form-container">
+                <div id="loginSection">
+                    <h2>Admin Login</h2>
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="email" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                    <div id="loginMessage" class="login-message"></div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="#" onclick="showForgotPassword(); return false;" style="color: #0f5a6f; text-decoration: none; font-size: 14px;">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <div id="forgotPasswordSection" style="display: none;">
+                    <h2>Reset Password</h2>
+                    <div id="forgotPasswordSteps">
+                        <!-- Step 1: Enter Email -->
+                        <div id="step1" class="forgot-step">
+                            <form onsubmit="sendOTP(event)" class="login-form">
+                                <div class="form-group">
+                                    <label for="forgotEmail">Enter your Gmail address</label>
+                                    <input type="email" id="forgotEmail" placeholder="Gmail" autocomplete="off" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send OTP</button>
+                            </form>
+                        </div>
+
+                        <!-- Step 2: Verify OTP -->
+                        <div id="step2" class="forgot-step" style="display: none;">
+                            <form onsubmit="verifyOTP(event)" class="login-form">
+                                <p style="margin-bottom: 15px;">An OTP has been sent to your email. Enter it below:</p>
+                                <div class="form-group">
+                                    <label for="otp">Enter OTP</label>
+                                    <input type="text" id="otp" placeholder="6-digit code" maxlength="6" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Verify OTP</button>
+                            </form>
+                        </div>
+
+                        <!-- Step 3: Reset Password -->
+                        <div id="step3" class="forgot-step" style="display: none;">
+                            <form onsubmit="resetPassword(event)" class="login-form">
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" id="newPassword" placeholder="Enter new password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Reset Password</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="forgotMessage" class="login-message"></div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="#" onclick="backToLogin(); return false;" style="color: #0f5a6f; text-decoration: none; font-size: 14px;">Back to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SOM ENTERPRISES</h4>
+                    <p>Delivering sustainable energy projects with profitability and long-term vision. Comprehensive partner for India's green transformation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#overview">About</a></li>
+                        <li><a href="index.html#offerings">Offerings</a></li>
+                        <li><a href="employees.html">Team</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: contact@somenterprises.in<br>Phone: +91-98765-43210<br>Owner: Shiv Kant Dubey</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SOM Enterprises. All Rights Reserved. | Powering a Sustainable Future</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+    <script src="forgot-password.js"></script>
+</body>
+</html>

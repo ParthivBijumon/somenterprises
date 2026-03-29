@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOM Enterprises - Powering a Sustainable Future</title>
+    <!-- Google Fonts: Inter for body, Outfit for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="bg-current" class="bg"></div>
+    <div id="bg-next" class="bg"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SOM Enterprises Logo" class="logo-image">
+                SOM ENTERPRISES
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#overview">About</a></li>
+                <li><a href="#offerings">Offerings</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="employees.html">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="adminLink"><a href="login.html">Admin</a></li>
+                <li id="logoutLink" style="display: none;"><a href="#" onclick="logout(); return false;">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="particles-container" class="particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="reveal-text" style="animation-delay: 0.2s;">SOM Enterprises – Powering a Sustainable Future</h1>
+                <p class="reveal-text" style="animation-delay: 0.4s;">Proprietorship firm specializing in renewable energy, electrical infrastructure and civil construction</p>
+                <a href="#overview" class="btn btn-primary reveal-text" style="animation-delay: 0.6s;">Explore Our Vision</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to Explore</span>
+            <div class="arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- Company Overview Section -->
+    <section id="overview" class="overview-section">
+        <div class="container">
+            <h2>Company Overview</h2>
+            <div class="overview-content">
+                <div class="overview-image">
+                    <img src="owner.jpeg" alt="Shiv Kant Dubey - Owner" class="owner-image">
+                </div>
+                <div class="overview-text">
+                    <p>SOM Enterprises is a registered proprietorship firm owned by Shiv Kant Dubey, specializing in renewable energy solutions, electrical infrastructure, and civil construction across Uttar Pradesh and beyond.</p>
+                    <h3>Our Mission</h3>
+                    <p>Deliver sustainable energy projects with profitability and long-term vision. We provide end-to-end solar energy solutions including design, installation, commissioning, and maintenance. Our integrated approach encompasses electrical infrastructure, project management, distribution, and civil works, positioning us as a comprehensive partner for India's green transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision-mission" class="vision-section">
+        <div class="container">
+            <h2>Vision & Mission</h2>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <h3>Strategic Vision</h3>
+                    <p><strong>Our Vision:</strong></p>
+                    <ul>
+                        <li>To be the preferred provider of renewable energy and infrastructure solutions</li>
+                        <li>Drive India's green transformation toward a sustainable future</li>
+                    </ul>
+                </div>
+                <div class="vision-card accent">
+                    <h3>Mission Points</h3>
+                    <p><strong>Our Mission:</strong></p>
+                    <ul>
+                        <li>Deliver efficient, cost-effective solar energy systems</li>
+                        <li>Expand into electrical and civil infrastructure projects</li>
+                        <li>Promote green energy adoption across Uttar Pradesh and beyond</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Offerings Section -->
+    <section id="offerings" class="offerings-section">
+        <div class="container">
+            <h2>Core Offerings</h2>
+            <p class="section-subtitle">Comprehensive Renewable Energy Solutions</p>
+            <div class="offerings-grid">
+                <div class="offering-card">
+                    <div class="offering-number">1</div>
+                    <h3>Solar Power Systems</h3>
+                    <p>Rooftop and ground-mounted installations designed for optimal energy generation and long-term performance.</p>
+                </div>
+                <div class="offering-card">
+                    <div class="offering-number">2</div>
+                    <h3>Electrical Infrastructure</h3>
+                    <p>Inverters, ACDB panels, wiring and complete distribution systems for reliable power management.</p>
+                </div>
+                <div class="offering-card">
+                    <div class="offering-number">3</div>
+                    <h3>Civil Works</h3>
+                    <p>Concrete flooring, structural foundations, and comprehensive site development for project infrastructure.</p>
+                </div>
+                <div class="offering-card">
+                    <div class="offering-number">4</div>
+                    <h3>Maintenance & AMC</h3>
+                    <p><strong>Maintenance - 3 years</strong></p>
+                    <p>Long-term service agreements and operational support ensuring sustained system performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainable Neighbourhood Section -->
+    <section id="sustainable" class="sustainable-section">
+        <video autoplay loop muted class="background-video">
+            <source src="upscaled-video.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <h2>Our Vision: Sustainable Neighbourhoods</h2>
+            <p class="section-subtitle">Building Green Communities for Tomorrow</p>
+            <div class="sustainable-content">
+                <div class="sustainable-grid">
+                    <div class="sustainable-card">
+                        <h3>Green Energy</h3>
+                        <p>100% renewable energy-powered communities with zero carbon emissions and minimal environmental impact.</p>
+                    </div>
+                    <div class="sustainable-card">
+                        <h3>Smart Grid Technology</h3>
+                        <p>Intelligent power distribution systems that optimize energy usage and ensure reliable electricity 24/7.</p>
+                    </div>
+                    <div class="sustainable-card">
+                        <h3>Eco-Friendly Infrastructure</h3>
+                        <p>Sustainable building practices with water harvesting, waste management, and green spaces.</p>
+                    </div>
+                    <div class="sustainable-card">
+                        <h3>Community Empowerment</h3>
+                        <p>Local job creation, skill development, and affordable renewable energy access for all residents.</p>
+                    </div>
+                </div>
+                
+                <div class="sustainable-animation">
+                    <h3>Interactive Energy Flow</h3>
+                    <div class="energy-flow">
+                        <div class="sun-source">Solar</div>
+                        <div class="energy-flow-arrow">→</div>
+                        <div class="storage">Storage</div>
+                        <div class="energy-flow-arrow">→</div>
+                        <div class="community"><span class="house-icon">🏠</span>Community</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Infrastructure & Technical Capabilities Section -->
+    <section id="infrastructure" class="infrastructure-section">
+        <div class="container">
+            <h2>Infrastructure & Technical Capabilities</h2>
+            <div class="offerings-grid">
+                <div class="offering-card">
+                    <h3>Physical Resources</h3>
+                    <p>Solar Farm Installation: Large-scale solar panels deployed on open land for maximum energy generation</p>
+                    <p>Electrical Setup: Multiple inverters (INVERTER-3 to INVERTER-8) and AC Distribution Board (ACDB) housed in dedicated facility</p>
+                </div>
+                <div class="offering-card">
+                    <h3>Human Resources</h3>
+                    <p>Technical Team: 15-20 trained workers across electrical, civil, and renewable energy domains, supported by 5 technical supervisors</p>
+                    <p>Civil Construction: Skilled team for concrete flooring, brick wall construction, structural foundations, and site development capabilities</p>
+                </div>
+                <div class="offering-card">
+                    <h3>Technical Capabilities</h3>
+                    <p>Our technical expertise spans solar farm setup and electrical distribution systems. We operate a dedicated inverter room equipped with power management systems. Our skilled civil construction team handles structural and site development capabilities. With 15-20 trained workers and 5 technical supervisors, we deliver quality renewable energy solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Analysis Section -->
+    <section id="market" class="market-section">
+        <div class="container">
+            <h2>Market Analysis</h2>
+            <p class="section-subtitle">Strategic Positioning in India's Energy Sector</p>
+            <div class="market-grid">
+                <div class="market-card">
+                    <h3>Target Markets</h3>
+                    <ul>
+                        <li>Industrial units seeking energy cost reduction</li>
+                        <li>Commercial complexes requiring reliable power</li>
+                        <li>Hospitals and societies adopting green energy</li>
+                        <li>Government projects supporting renewable initiatives</li>
+                    </ul>
+                </div>
+                <div class="market-card accent">
+                    <h3>Demand Drivers</h3>
+                    <ul>
+                        <li>Rising electricity costs pushing businesses toward solar alternatives</li>
+                        <li>MNRE subsidies and government incentives making installations affordable</li>
+                        <li>Growing awareness of renewable energy benefits across sectors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- India Project Map Section -->
+    <section id="india-work" class="india-map-section">
+        <div class="container">
+            <h2>Project Footprint in India</h2>
+            <div class="india-map-wrapper" id="indiaMapWrapper">
+                <img src="india-map.png" alt="India map" class="india-map-image" id="indiaMapImage" onerror="this.src='https://via.placeholder.com/900x600?text=India+map+not+available';">
+                <div class="map-tooltip" id="mapTooltip" role="tooltip" aria-hidden="true"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Landscape Section -->
+    <section id="competitive" class="competitive-section">
+        <div class="container">
+            <h2>Competitive Landscape</h2>
+            <div class="competitive-grid">
+                <div class="competitive-card">
+                    <h3>Competition</h3>
+                    <p>Local EPC contractors and regional installers offer basic solar solutions but often lack integrated expertise. National players focus on large-scale projects, creating market nuances and significant opportunity for firms with strong local presence and multi-disciplinary capabilities.</p>
+                </div>
+                <div class="competitive-card accent">
+                    <h3>Opportunity</h3>
+                    <p>Uttar Pradesh and nearby regions present substantial growth potential. Increasing preference for sustainable and cost-effective energy solutions drives market expansion. SOM Enterprises is strategically positioned to capture this emerging market segment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Advantages Section -->
+    <section id="advantages" class="advantages-section">
+        <div class="container">
+            <h2>Strategic Advantages</h2>
+            <p class="section-subtitle">Why Choose SOM Enterprises ?</p>
+            <div class="advantages-content">
+                <p>SOM Enterprises stands apart through integrated expertise across solar, electrical, and civil domains. Our proven ability to deliver turnkey renewable energy projects ensures serious execution from design to commissioning. With a deep understanding of regional energy needs, we provide solutions tailored to Uttar Pradesh and beyond.</p>
+                <p>Our unwavering commitment to quality, safety, and sustainability drives every project. We combine technical excellence with responsible practices to deliver lasting value for our clients and the environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Roadmap Section -->
+    <section id="roadmap" class="roadmap-section">
+        <div class="container">
+            <h2>Growth Roadmap</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-card">
+                    <h3>Short-Term Goals</h3>
+                    <ul>
+                        <li>Expand solar installations across Uttar Pradesh</li>
+                        <li>Strengthen technical workforce with additional skilled workers</li>
+                        <li>Upgrade equipment base with modern installation tools</li>
+                        <li>Build stronger client relationships in industrial and commercial sectors</li>
+                    </ul>
+                </div>
+                <div class="roadmap-card accent">
+                    <h3>Long-Term Goals</h3>
+                    <ul>
+                        <li>Diversify into large-scale EPC contracts for major infrastructure</li>
+                        <li>Establish strategic partnerships for smart energy solutions and grid integration</li>
+                        <li>Achieve consistent year-on-year revenue growth through expanded service offerings</li>
+                        <li>Position as regional leader in renewable energy infrastructure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Commitment Section -->
+    <section id="sustainability" class="sustainability-section">
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2>Sustainability Commitment</h2>
+            <p class="section-subtitle">Building a Greener Tomorrow</p>
+            <div class="sustainability-content glass-panel-accent">
+                <p>At SOM Enterprises, environmental responsibility is at the core of everything we do. We are committed to promoting clean energy adoption to reduce carbon footprint across communities. We actively support government renewable energy missions and MNRE initiatives.</p>
+                <p>Our construction practices prioritize eco-friendly methods, sustainable materials, and minimal environmental impact. Together, we're building a greener tomorrow for future generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways Section -->
+    <section id="takeaways" class="takeaways-section">
+        <div class="container">
+            <h2>Key Takeaways</h2>
+            <div class="takeaways-grid">
+                <div class="takeaway-item">
+                    <div class="takeaway-number">1</div>
+                    <p>SOM Enterprises is a multi-disciplinary energy and infrastructure firm with integrated expertise across solar, electrical, and civil domains.</p>
+                </div>
+                <div class="takeaway-item">
+                    <div class="takeaway-number">2</div>
+                    <p>Our core focus areas include solar power systems, electrical distribution infrastructure, and comprehensive civil construction works.</p>
+                </div>
+                <div class="takeaway-item">
+                    <div class="takeaway-number">3</div>
+                    <p>Strategically positioned to capitalize on India's growing renewable energy market and expanding demand in Tier-2 cities.</p>
+                </div>
+                <div class="takeaway-item">
+                    <div class="takeaway-number">4</div>
+                    <p>Driven by innovation, sustainability, and excellence in delivering turnkey energy projects with long-term value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workforce Metrics Section -->
+    <section id="workforce" class="workforce-metrics-section">
+        <div class="container">
+            <h2>Project Workforce Summary</h2>
+            <div class="workforce-grid">
+                <div class="workforce-card total">
+                    <h3>50</h3>
+                    <p>Total Workers</p>
+                </div>
+                <div class="workforce-card">
+                    <h3>10</h3>
+                    <p>Engineers</p>
+                </div>
+                <div class="workforce-card">
+                    <h3>2</h3>
+                    <p>Accountants</p>
+                </div>
+                <div class="workforce-card">
+                    <h3>5</h3>
+                    <p>Safety Engineers</p>
+                </div>
+                <div class="workforce-card">
+                    <h3>33</h3>
+                    <p>Labour</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Thank You For Your Attention</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:contact@somenterprises.in">contact@somenterprises.in</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+919876543210">+91-98765-43210</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Location</h4>
+                        <p>Uttar Pradesh, India</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Owner</h4>
+                        <p>Shiv Kant Dubey</p>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="input-group">
+                        <input type="text" id="form-name" placeholder=" " required>
+                        <label for="form-name">Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="form-email" placeholder=" " required>
+                        <label for="form-email">Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="form-message" placeholder=" " rows="5" required></textarea>
+                        <label for="form-message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <span class="btn-text">Send Inquiry</span>
+                        <div class="btn-spinner"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content glass-panel-accent">
+                <div class="footer-section">
+                    <h4>SOM ENTERPRISES</h4>
+                    <p>Delivering sustainable energy projects with profitability and long-term vision. Comprehensive partner for India's green transformation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#overview">About</a></li>
+                        <li><a href="#offerings">Offerings</a></li>
+                        <li><a href="#market">Market</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: contact@somenterprises.in<br>Phone: +91-98765-43210<br>Owner: Shiv Kant Dubey</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SOM Enterprises. All Rights Reserved. | Powering a Sustainable Future</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
