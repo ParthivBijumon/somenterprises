@@ -24,7 +24,34 @@ function logout() {
 }
 
 // Initialize navbar on page load
-document.addEventListener('DOMContentLoaded', updateNavbar);
+document.addEventListener('DOMContentLoaded', () => {
+    updateNavbar();
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Change hamburger character based on state
+            if (navLinks.classList.contains('active')) {
+                mobileMenuBtn.textContent = '✕';
+            } else {
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+        
+        // Close menu when a link is clicked
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+    }
+});
 
 // Also check and update if login status changes (for other tabs)
 window.addEventListener('storage', updateNavbar);
