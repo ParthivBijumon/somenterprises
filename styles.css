@@ -2090,13 +2090,23 @@ h2 {
         padding: 1.2rem;
     }
 
-    /* 2. Sustainable section size and flows */
+    /* 2. Sustainable section size and flows (Interactive Energy Flow in ONE LINE) */
     .sustainable-section { min-height: auto; }
     .sustainable-animation h3 { font-size: 1.2rem; }
-    .energy-flow { gap: 0.5rem; font-size: 1rem; flex-direction: column; }
-    .energy-flow-arrow { transform: rotate(90deg); margin: 0.5rem 0; font-size: 1.5rem; }
-    .energy-flow .sun-source { width: 50px; height: 50px; font-size: 0.8rem; }
-    .energy-flow .storage, .energy-flow .community { padding: 0.5rem 1rem; font-size: 0.9rem; }
+    .energy-flow { 
+        flex-direction: row !important; /* Single line */
+        gap: 0.2rem; 
+        font-size: 0.7rem; 
+        flex-wrap: wrap; /* Wrap if absolutely necessary, but try to stay 1 row */
+        justify-content: center;
+    }
+    .energy-flow-arrow { 
+        transform: rotate(0deg) !important; /* Restore normal right-pointing arrow */
+        margin: 0 0.1rem; 
+        font-size: 0.9rem; 
+    }
+    .energy-flow .sun-source { width: 35px; height: 35px; font-size: 0.6rem; padding: 2px; }
+    .energy-flow .storage, .energy-flow .community { padding: 0.3rem 0.6rem; font-size: 0.65rem; }
     
     /* 5. Workforce all in one line */
     .workforce-grid {
@@ -2155,15 +2165,26 @@ h2 {
         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
     .advantages-content p { margin-bottom: 8px; }
+
+    /* Fix map width and hero on 768px */
+    body, html { overflow-x: hidden !important; max-width: 100vw; }
+    .hero {
+        padding: 126px 0 84px !important; /* 30% reduction from 180 120 */
+    }
+    .india-map-section { overflow: hidden; padding: 0 !important; }
 }
 
 @media (max-width: 480px) {
-    /* 1. Hero overlapping fixes */
+    /* 1. Hero overlapping fixes (Reduced Height 30%) */
     .hero {
-        padding: 120px 0 60px !important; 
+        padding: 85px 0 50px !important; 
     }
     .scroll-indicator {
-        bottom: 10px;
-        transform: translateX(-50%) scale(0.7) !important;
+        bottom: 5px;
+        transform: translateX(-50%) scale(0.6) !important;
     }
+
+    /* Workforce extra squish for very thin phones */
+    .workforce-card h3 { font-size: 1.1rem; }
+    .workforce-card p { font-size: 0.5rem; }
 }
