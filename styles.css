@@ -2090,23 +2090,43 @@ h2 {
         padding: 1.2rem;
     }
 
-    /* 2. Sustainable section size and flows (Interactive Energy Flow in ONE LINE) */
+    /* 2. Sustainable section size, 2x2 grid, and flows */
     .sustainable-section { min-height: auto; }
-    .sustainable-animation h3 { font-size: 1.2rem; }
+    .sustainable-animation h3 { font-size: 1.1rem; }
+    
+    .sustainable-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 20px;
+    }
+    .sustainable-card {
+        padding: 10px !important;
+    }
+    .sustainable-card h3 {
+        font-size: 0.85rem !important;
+        margin-bottom: 5px;
+    }
+    .sustainable-card p {
+        font-size: 0.65rem !important;
+        line-height: 1.3;
+        margin-bottom: 0;
+    }
+    
     .energy-flow { 
         flex-direction: row !important; /* Single line */
-        gap: 0.2rem; 
-        font-size: 0.7rem; 
-        flex-wrap: wrap; /* Wrap if absolutely necessary, but try to stay 1 row */
+        flex-wrap: nowrap !important; /* Strictly no wrap - long only */
         justify-content: center;
+        align-items: center;
+        gap: 2px; 
     }
     .energy-flow-arrow { 
-        transform: rotate(0deg) !important; /* Restore normal right-pointing arrow */
-        margin: 0 0.1rem; 
-        font-size: 0.9rem; 
+        transform: rotate(0deg) !important; 
+        margin: 0 1px; 
+        font-size: 0.8rem; 
     }
-    .energy-flow .sun-source { width: 35px; height: 35px; font-size: 0.6rem; padding: 2px; }
-    .energy-flow .storage, .energy-flow .community { padding: 0.3rem 0.6rem; font-size: 0.65rem; }
+    .energy-flow .sun-source { width: 30px; height: 30px; font-size: 0.5rem; padding: 2px; }
+    .energy-flow .storage, .energy-flow .community { padding: 4px 6px; font-size: 0.55rem; white-space: nowrap; }
     
     /* 5. Workforce all in one line */
     .workforce-grid {
