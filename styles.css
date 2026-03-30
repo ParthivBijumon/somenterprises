@@ -2070,7 +2070,7 @@ h2 {
     .nav-links {
         display: none !important; /* Managed by JS toggle */
         flex-direction: column !important;
-        align-items: flex-start !important;
+        align-items: stretch !important;
         justify-content: flex-start !important;
         width: 100%;
         height: 100vh;
@@ -2080,10 +2080,11 @@ h2 {
         padding: 80px 40px !important;
         z-index: 1000;
         gap: 1.5rem !important;
+        text-align: left !important;
     }
     .nav-links.active { display: flex !important; }
-    .nav-links li { width: 100%; border-bottom: 1px solid #eaeaea; padding-bottom: 5px; }
-    .nav-links a { font-size: 1.5rem !important; }
+    .nav-links li { width: 100%; border-bottom: 1px solid #eaeaea; padding-bottom: 5px; text-align: left !important; }
+    .nav-links a { font-size: 1.5rem !important; text-align: left !important; display: block; width: 100%; }
     
     /* 4. Background boxes smaller */
     .vision-card, .offering-card, .market-card, .infrastructure-card, .sustainable-card {
