@@ -46,7 +46,7 @@ document.querySelector('.contact-form')?.addEventListener('submit', function (e)
 
     if (name && email && message) {
         submitBtn.classList.add('loading');
-        
+
         fetch('/api/send-inquiry', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -178,12 +178,6 @@ document.querySelectorAll('.offering-card').forEach(card => {
         setTimeout(() => {
             this.style.transform = '';
         }, 200);
-
-        // Show tooltip with service details
-        const h3 = this.querySelector('h3');
-        if (h3) {
-            showNotification(h3.textContent + ' selected!');
-        }
     });
 });
 
@@ -291,15 +285,15 @@ function initIndiaProjectMap() {
     });
 
     const places = [
-        { name: 'Gajendragad, Karnataka', left: 177, top: 455, detail: 'Enfinity Gajendragad 28MWp(electrical contract) karnataka.' },
-        { name: 'Mahajnko, Maharashtra ', left: 165, top: 403, detail: 'Mahajnko - Maharashtra state govt (20Mwp) done commisioning - 2025.' },
-        { name: 'Sunsure energy, Maharashtra ', left: 142, top: 393, detail: 'Sunsure energy - Masharastra (85Mwp) -2025.' },
-        { name: 'Kalpa power, Maharashtra ', left: 124, top: 401, detail: 'Kalpa power - 50MWp - Maharashtra - 2025.' },
-        { name: 'Prozeel, Maharashtra', left: 165, top: 380, detail: 'Prozeel - Maharashtra - 80Mwp( AC,DC, Pileing,MMS,Civil,MCR - 2023.' },
-        { name: 'Noida, Uttar Pradesh', left: 207, top: 188, detail: 'Sukheer agro - noeida metro -28 stations (10Mwp - rooftop) - 2022.' },
-        { name: 'AMPLUS, Karnataka', left: 207, top: 521, detail: 'AMPLUS solar - 2MWp- chennai (rooftop) - 2021.' },
-        { name: 'AMPLUS, Chennai ', left: 247, top: 515, detail: 'AMPLUS - Chennai - 10MWp - rooftop - 2020.' },
-        { name: 'Raipur, Chhattisgarh', left: 273, top: 347, detail: 'Rel - raipur -50MWp - 2019.' }
+        { name: 'Gajendragad, Karnataka', left: 227, top: 555, detail: 'Enfinity Gajendragad 28MWp(electrical contract) karnataka.' },
+        { name: 'Mahajnko, Maharashtra ', left: 195, top: 488, detail: 'Mahajnko - Maharashtra state govt (20Mwp) done commisioning - 2025.' },
+        { name: 'Sunsure energy, Maharashtra ', left: 172, top: 475, detail: 'Sunsure energy - Masharastra (85Mwp) -2025.' },
+        { name: 'Kalpa power, Maharashtra ', left: 154, top: 491, detail: 'Kalpa power - 50MWp - Maharashtra - 2025.' },
+        { name: 'Prozeel, Maharashtra', left: 195, top: 470, detail: 'Prozeel - Maharashtra - 80Mwp( AC,DC, Pileing,MMS,Civil,MCR - 2023.' },
+        { name: 'Noida, Uttar Pradesh', left: 261, top: 230, detail: 'Sukheer agro - noeida metro -28 stations (10Mwp - rooftop) - 2022.' },
+        { name: 'AMPLUS, Karnataka', left: 257, top: 641, detail: 'AMPLUS solar - 2MWp- chennai (rooftop) - 2021.' },
+        { name: 'AMPLUS, Chennai ', left: 297, top: 635, detail: 'AMPLUS - Chennai - 10MWp - rooftop - 2020.' },
+        { name: 'Raipur, Chhattisgarh', left: 333, top: 427, detail: 'Rel - raipur -50MWp - 2019.' }
 
     ];
 
@@ -335,7 +329,7 @@ function initIndiaProjectMap() {
     }
 
     const mapImg = document.getElementById('indiaMapImage');
-    
+
     function renderPins() {
         // Fallback to 800x600 if image lacks dimensions, assuming base map is somewhere around that ratio
         const nWidth = mapImg.naturalWidth || 800;
@@ -494,18 +488,18 @@ document.querySelectorAll('.btn').forEach(btn => {
 function showCustomToast(message, type = 'success') {
     const toast = document.createElement('div');
     toast.className = `custom-toast ${type}`;
-    
-    const icon = type === 'success' 
+
+    const icon = type === 'success'
         ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7dd25f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>'
         : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff5252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
-        
+
     toast.innerHTML = `${icon}<span>${message}</span>`;
     document.body.appendChild(toast);
-    
+
     requestAnimationFrame(() => {
         toast.classList.add('show');
     });
-    
+
     setTimeout(() => {
         toast.classList.remove('show');
         setTimeout(() => toast.remove(), 400);
