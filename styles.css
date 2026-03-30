@@ -2091,14 +2091,30 @@ h2 {
     }
 
     /* 2. Sustainable section size, 2x2 grid, and flows */
-    .sustainable-section { min-height: auto; }
-    .sustainable-animation h3 { font-size: 1.1rem; }
+    .sustainable-section { min-height: auto; text-align: center; }
+    .sustainable-animation { 
+        display: inline-block !important; 
+        padding: 15px !important; 
+        border-radius: 12px !important; 
+        margin: 0 auto;
+    }
+    .sustainable-animation h3 { font-size: 1rem; margin-bottom: 15px; }
     
     .sustainable-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
         margin-bottom: 20px;
+    }
+    
+    /* 3. Scale Map Pins dynamically for mobile */
+    .map-pin {
+        width: 8px !important;
+        height: 8px !important;
+    }
+    .map-pin::after {
+        width: 8px !important;
+        height: 8px !important;
     }
     .sustainable-card {
         padding: 10px !important;
@@ -2170,9 +2186,15 @@ h2 {
         font-size: 80%; /* 16px to roughly 12.8px globally */
     }
     
-    /* Center the Hero components as requested */
-    .hero, .hero-content {
+    /* Center the Hero components as requested -> Now Left Aligned */
+    .hero {
         justify-content: center !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+    .hero-content {
+        justify-content: center !important;
+        align-items: flex-start !important;
     }
     .reveal-text {
         animation-delay: 0.1s !important; /* Extremely minimal delay for fast mobile load */
