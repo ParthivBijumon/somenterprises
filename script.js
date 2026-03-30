@@ -334,69 +334,52 @@ function initIndiaProjectMap() {
         tooltip.setAttribute('aria-hidden', 'true');
     }
 
-    function resolveCoordinate(value, axisSize) {
-        if (typeof value === 'number') {
-            // pixel value relative to wrapper
-            return `${value}px`;
-        }
-        if (typeof value === 'string' && value.trim().endsWith('%')) {
+    const mapImg = document.getElementById('indiaMapImage');
+    
+    function renderPins() {
+        // Fallback to 800x600 if image lacks dimensions, assuming base map is somewhere around that ratio
+        const nWidth = mapImg.naturalWidth || 800;
+        const nHeight = mapImg.naturalHeight || 600;
+
+        function resolveCoordinate(value, max) {
+            if (typeof value === 'number') {
+                return `${(value / max) * 100}%`;
+            }
+            if (typeof value === 'string' && value.trim().endsWith('%')) {
+                return value;
+            }
             return value;
         }
-        // default fallback: direct pixel string or percent
-        return value;
-    }
 
-    places.forEach(place => {
-        const pin = document.createElement('div');
-        pin.className = 'map-pin';
-        pin.style.left = resolveCoordinate(place.left);
-        pin.style.top = resolveCoordinate(place.top);
+        // Clear any existing pins first (useful on resize/reload)
+        mapWrapper.querySelectorAll('.map-pin').forEach(p => p.remove());
 
-        pin.addEventListener('mouseenter', (event) => showTooltip(event, place));
-        pin.addEventListener('mousemove', updateTooltipPosition);
-        pin.addEventListener('mouseleave', hideTooltip);
-        pin.addEventListener('click', () => {
-            document.querySelectorAll('.map-pin').forEach(el => el.classList.remove('active'));
-            pin.classList.add('active');
+        places.forEach(place => {
+            const pin = document.createElement('div');
+            pin.className = 'map-pin';
+            pin.style.left = resolveCoordinate(place.left, nWidth);
+            pin.style.top = resolveCoordinate(place.top, nHeight);
+
+            pin.addEventListener('mouseenter', (event) => showTooltip(event, place));
+            pin.addEventListener('mousemove', updateTooltipPosition);
+            pin.addEventListener('mouseleave', hideTooltip);
+            pin.addEventListener('click', () => {
+                document.querySelectorAll('.map-pin').forEach(el => el.classList.remove('active'));
+                pin.classList.add('active');
+            });
+
+            mapWrapper.appendChild(pin);
         });
+    }
 
-        mapWrapper.appendChild(pin);
-    });
-}
-
-// Function to dynamically scale the India map on mobile screens
-// so that absolute pins do not detach while fitting the phone width.
-function handleMapResize() {
-    const wrapper = document.getElementById('indiaMapWrapper');
-    if (!wrapper) return;
-    
-    // Set a container for measurement
-    const container = wrapper.parentElement;
-    if (window.innerWidth <= 768) {
-        // 800px is the CSS-forced native width
-        const availableWidth = container.clientWidth;
-        const scale = availableWidth / 800;
-        
-        wrapper.style.transform = `scale(${scale})`;
-        
-        // Adjust the container height to prevent huge whitespace 
-        // because scaled elements still occupy original height in DOM
-        const nativeHeight = wrapper.offsetHeight || 600; 
-        container.style.height = `${nativeHeight * scale}px`;
-        container.style.overflow = 'hidden';
-    } else {
-        wrapper.style.transform = 'none';
-        container.style.height = 'auto';
-        container.style.overflow = 'visible';
+    if (mapImg && mapImg.complete && mapImg.naturalWidth !== 0) {
+        renderPins();
+    } else if (mapImg) {
+        mapImg.addEventListener('load', renderPins);
     }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    initIndiaProjectMap();
-    handleMapResize();
-});
-
-window.addEventListener('resize', handleMapResize);
+window.addEventListener('DOMContentLoaded', initIndiaProjectMap);
 
 // Scroll background change like video at 120 FPS with smooth transition
 let currentImageNum = 1;
