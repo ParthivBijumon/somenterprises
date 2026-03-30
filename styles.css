@@ -2101,36 +2101,69 @@ h2 {
     /* 5. Workforce all in one line */
     .workforce-grid {
         grid-template-columns: repeat(5, 1fr) !important;
-        gap: 5px;
+        gap: 2px;
     }
     .workforce-card {
-        padding: 5px;
-        min-height: 80px;
+        padding: 5px 2px;
+        min-height: 60px;
     }
-    .workforce-card h3 { font-size: 1.5rem; }
-    .workforce-card p { font-size: 0.7rem; }
+    .workforce-card h3 { font-size: 1.2rem; }
+    .workforce-card p { 
+        font-size: 0.55rem; 
+        white-space: nowrap; 
+    }
     
-    /* 3. India Map fixed placement by enabling scrolling instead of scaling wrapper */
+    /* 3. India Map fixed placement by JS scaling (wrapper width frozen to 800px) */
     .india-map-wrapper {
-        overflow-x: auto; /* Adds horizontal scrolling */
-        max-width: 100vw;
+        width: 800px; /* Frozen native width for calculation */
+        max-width: none;
+        transform-origin: top left;
+        transition: transform 0.2s;
     }
-    .india-map-image {
-        min-width: 800px; /* Forces map to original size so pins stay intact */
+    
+    /* 1. Hamburger on left, Hero bar reduced padding */
+    .navbar .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0.5rem 10px; /* Reduced bar size */
     }
+    .mobile-menu-btn {
+        order: -1;
+        margin-right: 15px; /* Spells logo from ham */
+    }
+    .logo {
+        font-size: 1.2rem;
+        margin-right: auto;
+    }
+    
+    /* 2. All fonts reduced by 20% on mobile */
+    html {
+        font-size: 80%; /* 16px to roughly 12.8px globally */
+    }
+    
+    /* 3. & 4. Compress Roadmap & Advantages boxes */
+    .roadmap-card {
+        padding: 10px;
+    }
+    .roadmap-card h3 { margin-bottom: 5px; }
+    .roadmap-card li { margin-bottom: 4px; padding-left: 1rem; }
+    .advantages-content {
+        padding: 12px;
+        background: var(--white);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .advantages-content p { margin-bottom: 8px; }
 }
 
 @media (max-width: 480px) {
     /* 1. Hero overlapping fixes */
     .hero {
-        padding: 140px 0 80px !important; 
+        padding: 120px 0 60px !important; 
     }
     .scroll-indicator {
-        bottom: 15px;
-        transform: translateX(-50%) scale(0.8) !important;
+        bottom: 10px;
+        transform: translateX(-50%) scale(0.7) !important;
     }
-
-    /* Workforce extra squish for very thin phones */
-    .workforce-card h3 { font-size: 1.1rem; }
-    .workforce-card p { font-size: 0.5rem; }
 }
