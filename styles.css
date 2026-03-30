@@ -2123,12 +2123,10 @@ h2 {
         white-space: nowrap; 
     }
     
-    /* 3. India Map fixed placement by JS scaling (wrapper width frozen to 800px) */
+    /* 3. India Map fixed placement by JS % scaling rules */
     .india-map-wrapper {
-        width: 800px; /* Frozen native width for calculation */
+        width: 100%; /* Fully responsive percentage driven */
         max-width: none;
-        transform-origin: top left;
-        transition: transform 0.2s;
     }
     
     /* 1. Hamburger on left, Hero bar reduced padding */
@@ -2150,6 +2148,14 @@ h2 {
     /* 2. All fonts reduced by 20% on mobile */
     html {
         font-size: 80%; /* 16px to roughly 12.8px globally */
+    }
+    
+    /* Center the Hero components as requested */
+    .hero, .hero-content {
+        justify-content: center !important;
+    }
+    .reveal-text {
+        animation-delay: 0.1s !important; /* Extremely minimal delay for fast mobile load */
     }
     
     /* 3. & 4. Compress Roadmap & Advantages boxes */
