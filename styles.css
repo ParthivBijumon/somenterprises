@@ -1581,6 +1581,8 @@ h2 {
     .nav-links {
         gap: 1rem;
         font-size: 0.9rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero-content h1 {
@@ -1601,7 +1603,12 @@ h2 {
 
     .services-grid,
     .projects-grid,
-    .clients-grid {
+    .clients-grid,
+    .vision-grid,
+    .market-grid,
+    .competitive-grid,
+    .roadmap-grid,
+    .takeaways-grid {
         grid-template-columns: 1fr;
     }
     
@@ -1615,10 +1622,12 @@ h2 {
 
     .energy-flow {
         flex-direction: column;
+        gap: 0.5rem;
     }
 
     .energy-flow-arrow {
         transform: rotate(90deg);
+        margin: 0.5rem 0;
     }
 }
 
