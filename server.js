@@ -289,7 +289,7 @@ app.post('/api/forgot-password', (req, res) => {
     
     sendEmailViaGoogle(email, subject, html)
         .then(() => res.json({ message: 'OTP sent to email', success: true }))
-        .catch(err => res.status(500).json({ error: 'Error sending OTP email', success: false }));
+        .catch(err => res.status(500).json({ error: 'Error sending OTP email: ' + err.message, success: false }));
 });
 
 app.post('/api/verify-otp', (req, res) => {
