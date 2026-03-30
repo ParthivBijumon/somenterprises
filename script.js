@@ -364,7 +364,39 @@ function initIndiaProjectMap() {
     });
 }
 
-window.addEventListener('DOMContentLoaded', initIndiaProjectMap);
+// Function to dynamically scale the India map on mobile screens
+// so that absolute pins do not detach while fitting the phone width.
+function handleMapResize() {
+    const wrapper = document.getElementById('indiaMapWrapper');
+    if (!wrapper) return;
+    
+    // Set a container for measurement
+    const container = wrapper.parentElement;
+    if (window.innerWidth <= 768) {
+        // 800px is the CSS-forced native width
+        const availableWidth = container.clientWidth;
+        const scale = availableWidth / 800;
+        
+        wrapper.style.transform = `scale(${scale})`;
+        
+        // Adjust the container height to prevent huge whitespace 
+        // because scaled elements still occupy original height in DOM
+        const nativeHeight = wrapper.offsetHeight || 600; 
+        container.style.height = `${nativeHeight * scale}px`;
+        container.style.overflow = 'hidden';
+    } else {
+        wrapper.style.transform = 'none';
+        container.style.height = 'auto';
+        container.style.overflow = 'visible';
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    initIndiaProjectMap();
+    handleMapResize();
+});
+
+window.addEventListener('resize', handleMapResize);
 
 // Scroll background change like video at 120 FPS with smooth transition
 let currentImageNum = 1;
